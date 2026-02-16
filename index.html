@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Golden Whisk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">G<span>W</span></a>
+
+        <input type="text" id="searchInput" placeholder="Search products...">
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">The Menu</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="home">
+    <div class="hero-text">
+        <h1>Soft Bakes, Early Mornings.</h1>
+        <p>Freshly baked cookies, pastries and custom cakes made with love.</p>
+    </div>
+</header>
+
+<!-- PRODUCTS -->
+<section class="products" id="menu">
+    <h2>The Morning Selection</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80">
+            <h3>Gourmet Cookies</h3>
+            <p>Soft chocolate chunk cookies.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80">
+            <h3>Morning Pastries</h3>
+            <p>Flaky croissants & fruit delights.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80">
+            <h3>Custom Cakes</h3>
+            <p>Elegant celebration cakes.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 THE GOLDEN WHISK</p>
+</footer>
+
+<!-- SEARCH SCRIPT -->
+<script>
+const searchInput = document.getElementById("searchInput");
+const products = document.querySelectorAll(".product-card");
+
+searchInput.addEventListener("keyup", function () {
+    const value = searchInput.value.toLowerCase();
+
+    products.forEach(product => {
+        const text = product.innerText.toLowerCase();
+        product.style.display = text.includes(value) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
