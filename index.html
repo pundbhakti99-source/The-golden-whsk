@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweet Cravings Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">Sweet Cravings 🍰</div>
+        <div class="cart">Cart (<span id="cart-count">0</span>)</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Freshly Baked Happiness</h1>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button onclick="searchProducts()">Search</button>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1605475128023-3c9d2b6b2f47" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>₹500</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7" alt="Strawberry Cake">
+            <h3>Strawberry Cake</h3>
+            <p>₹600</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f" alt="Cupcakes">
+            <h3>Cupcakes</h3>
+            <p>₹300</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Sweet Cravings Bakery
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function searchProducts() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.getElementsByClassName("product");
+
+            for (let i = 0; i < products.length; i++) {
+                let title = products[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                
+                if (title.includes(input)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cart-count").innerText = cartCount;
+        }
+    </script>
+
+</body>
+</html>
