@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Gold Bakery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+<div class="nav-container">
+<a href="#" class="logo">THE <span>GOLD</span></a>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">The Menu</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Bag (0)</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero-split">
+<div class="hero-text">
+<div>
+<p class="tagline">FRESHLY BAKED AT 4:00 AM</p>
+<h1>Soft Bakes,<br>Early Mornings.</h1>
+<p>From buttery morning cookies to elegant celebration cakes, everything is hand-crafted in small batches before the sun rises.</p>
+<a href="#" class="btn btn-dark">Shop the Menu</a>
+<a href="#" class="btn btn-outline">Our Story</a>
+</div>
+</div>
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="Bakery">
+</div>
+</section>
+
+<!-- SEARCH -->
+<section class="search-section">
+<input type="text" id="searchInput" placeholder="Search bakery items...">
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+<div class="section-title">
+<span>FROM THE OVEN</span>
+<h2>The Morning Selection</h2>
+</div>
+
+<div class="product-grid">
+
+<article class="product-card">
+<div class="badge">Bestseller</div>
+<div class="img-zoom">
+<img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b">
+</div>
+<h3>Gourmet Cookies</h3>
+<p>Signature chocolate chunks & sea salt, baked to be soft and gooey.</p>
+<a href="#" class="shop-link">Explore Cookies →</a>
+</article>
+
+<article class="product-card">
+<div class="img-zoom">
+<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec">
+</div>
+<h3>Morning Pastries</h3>
+<p>Flaky, hand-laminated croissants and seasonal fruit galettes.</p>
+<a href="#" class="shop-link">Explore Pastries →</a>
+</article>
+
+<article class="product-card">
+<div class="img-zoom">
+<img src="https://images.unsplash.com/photo-1605475128023-3c9d2b6b2f47">
+</div>
+<h3>Custom Cakes</h3>
+<p>Elegant, bespoke designs for birthdays and morning celebrations.</p>
+<a href="#" class="shop-link">Explore Cakes →</a>
+</article>
+
+</div>
+</section>
+
+<footer>
+© 2026 THE GOLD
+</footer>
+
+<!-- SEARCH SCRIPT -->
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function() {
+
+let filter = this.value.toLowerCase();
+let products = document.querySelectorAll(".product-card");
+
+products.forEach(function(product) {
+let text = product.innerText.toLowerCase();
+
+if (text.includes(filter)) {
+product.style.display = "block";
+} else {
+product.style.display = "none";
+}
+});
+});
+</script>
+
+</body>
+</html>
